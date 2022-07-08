@@ -1,0 +1,44 @@
+header > nav {
+  background-color: #ddd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem;
+  gap: 12px;
+}
+
+header > nav > img {
+  border-radius: 50%;
+  width: 2.5rem;
+}
+
+header > nav > span {
+  font-size: 0.9rem;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+/* css blinking text cursor */
+header > nav > span > .blinker {
+  animation-name: blinker;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  animation-duration: 1s;
+  /* //Basic styling */
+  display: inline-block;
+  width: 0.12rem;
+  height: 0.9rem;
+  box-shadow: 0 0 10px rgba(white, 0.3);
+  background: black;
+}
+
+/* css blinking text cursor */
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
