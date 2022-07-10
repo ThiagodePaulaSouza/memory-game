@@ -39,17 +39,26 @@ header {
   transform-style: preserve-3d;
 }
 
+
 .face {
   width: 100%;
   height: 100%;
   position: absolute;
   background-size: cover;
   background-position: center;
-  background-color: #d400b855;
-  border: 2px solid #cca5c7;
+  background-color: #d400b850;
+  backdrop-filter: blur(10px) saturate(260%) contrast(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(260%) contrast(180%);
+  border: 1px solid #cca5c7;
   /* c6d400 */
   border-radius: 5px;
   transition: all 500ms ease;
+}
+
+.face:hover {
+  background-color: #cf010165;
+  backdrop-filter: blur(10px) saturate(260%) contrast(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(260%) contrast(180%);
 }
 
 .front {
@@ -58,6 +67,7 @@ header {
 
 .back {
   background-image: url(../images/backjpg.jpg);
+  
   backface-visibility: hidden;
 }
 
