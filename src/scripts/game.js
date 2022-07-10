@@ -9,7 +9,7 @@ const characters = [
   "flameQueen",
   "gunter",
   "iceKing",
-  "jake",
+  "Jake",
   "lich",
   "marceline",
   "princessBubblegum",
@@ -27,14 +27,11 @@ let secondCard = "";
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll(".disabled-card");
 
-  /**
-   * Modal endGame escurece fundo, com botões
-   * Inicio (casinha) , Restart (seta voltando), Créditos (git)
-   * */
   if (disabledCards.length === 20) {
     clearInterval(this.loop);
     setTimeout(() => {
-      alert(`Congratulations ${spanPlayer.innerHTML},\nYou WIN!!!\nClick OK to RESTART!`,
+      alert(
+        `Congratulations ${spanPlayer.innerHTML},\nYou WIN!!!\nClick OK to RESTART!`,
         location.reload()
       );
     }, 500);
@@ -121,5 +118,4 @@ window.onload = () => {
   spanPlayer.innerHTML = playerName;
   startTimer();
   loadGame();
-  
 };
