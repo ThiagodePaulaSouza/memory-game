@@ -13,27 +13,43 @@
     <link rel="stylesheet" href="./src/styles/reset.css" />
     <link rel="stylesheet" href="./src/styles/header.css" />
     <link rel="stylesheet" href="./src/styles/login.css" />
+    <script
+      src="https://kit.fontawesome.com/b1ac7e6895.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
     <script src="./src/scripts/login.js" defer></script>
     <title>Memory Game - Login</title>
   </head>
   <body>
+    <header>
+      <nav>
+        <a href="https://github.com/ThiagodePaulaSouza">
+          <img
+            src="https://github.com/ThiagodePaulaSouza.png"
+            alt="avatar-icon"
+          />
+          <span>@salequi_lapua<span class="blinker"></span></span>
+        </a>
+      </nav>
+    </header>
     <main>
-      <header>
-          <nav>
-            <a href="https://github.com/ThiagodePaulaSouza">
-              <img src="https://github.com/ThiagodePaulaSouza.png" alt="avatar-icon">
-              <span>@salequi_lapua<span class="blinker"></span></span>
-            </a>
-          </nav>
-      </header>
+      <div>
+        <input type="checkbox" name="checkbox" id="checkbox" />
+        <label for="checkbox" class="label">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+          <div class="ball"></div>
+        </label>
+      </div>
       <form class="login-form">
-          <div class="login-header">
-              <img src="./src/images/brain.png" alt="">
-              <h1>Memory Game</h1>
-          </div>
-  
-          <input type="text" placeholder="Name" class="login-input">
-          <button type="submit" class="login-button" disabled>Play</button>
+        <div class="login-header">
+          <img src="./src/images/brain.png" alt="" />
+          <h1>Memory Game</h1>
+        </div>
+
+        <input type="text" placeholder="Name" class="login-input" />
+        <button type="submit" class="login-button" disabled>Play <i class="fa-solid fa-play fa-lg"></i></button>
       </form>
     </main>
   </body>

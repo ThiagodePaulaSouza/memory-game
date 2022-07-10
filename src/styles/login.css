@@ -1,8 +1,138 @@
-main {
+:root {
+  --bg-color: #c9c3ba;
+  --text-color: #000;
+  --nav-bg-color: #b9b2a6;
+  --nav-text-color: #000;
+}
+
+body {
+  display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 200ms linear;
+}
+
+body.dark {
+  --bg-color: hsl(40, 12%, 15%);
+  --text-color: #ddd;
+  --nav-bg-color: hsl(40, 12%, 11%);
+  --nav-text-color: #ccc;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  
+}
+
+header {
+  width: 100vw;
+}
+
+header > nav {
+  background-color: var(--nav-bg-color);
+  display: flex;
+  justify-content: center;
+  padding: 0.3rem;
+  gap: 12px;
+}
+
+header > nav > a {
+  text-decoration: none;
+  color: var(--nav-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+header > nav > a > img {
+  transition: transform 1s;
+  border-radius: 50%;
+  width: 2.5rem;
+}
+
+header > nav > a > img:hover {
+  transform: rotate(360deg);
+}
+
+header > nav > a > span {
+  font-size: 0.9rem;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+/* css blinking text cursor */
+header > nav > a > span > .blinker {
+  animation-name: blinker;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  animation-duration: 1s;
+  /* //Basic styling */
+  display: inline-block;
+  width: 0.12rem;
+  height: 0.9rem;
+  box-shadow: 0 0 10px rgba(white, 0.3);
+  background: var(--nav-text-color);
+}
+
+/* css blinking text cursor */
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  position: absolute;
+  opacity: 0;
+}
+
+.label {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  padding: 5px;
+  height: 26px;
+  width: 50px;
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+  position: relative;
+}
+
+.ball {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  transition: transform 0.2s linear;
+}
+
+input[type="checkbox"]:checked + .label .ball {
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
 }
 
 .login-form {
@@ -10,7 +140,9 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 82vh;
+  width: 100%;
+  max-width: 25rem;
+  margin: 0 auto;
 }
 
 .login-header {
@@ -27,30 +159,35 @@ main {
 }
 
 .login-input {
-    border: 2px solid #333;
-    border-radius: 8px;
-    color: #333;
-    font-size: 1em;
-    margin-bottom: 15px;
-    width: 100%;
-    max-width: 300px;
-    outline: none;
-    padding: 15px;
+  border: 2px solid var(--text-color);
+  border-radius: 8px;
+  color: #111;
+  font-size: 1em;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 300px;
+  outline: none;
+  padding: 15px;
 }
 
 .login-button {
-    background-color: #ee665c;
-    padding: 15px;
-    border-radius: 8px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 1em;
-    width: 100%;
-    max-width: 300px;
+  background-color: #ee665c;
+  padding: 15px;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  width: 100%;
+  max-width: 300px;
+  transition: background 300ms;
+}
+
+.login-button:hover {
+  background-color: #ff4133;
 }
 
 .login-button:disabled {
-    background-color: #eee;
-    color: #aaa;
-    cursor: auto;
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
 }
