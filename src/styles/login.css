@@ -28,7 +28,6 @@ main {
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  
 }
 
 header {
@@ -160,14 +159,21 @@ input[type="checkbox"]:checked + .label .ball {
 
 .login-input {
   border: 2px solid var(--text-color);
+  color: var(--text-color);
+  background-color: #fff;
   border-radius: 8px;
-  color: #111;
   font-size: 1em;
   margin-bottom: 15px;
   width: 100%;
   max-width: 300px;
   outline: none;
   padding: 15px;
+}
+
+.login-input.dark {
+  -webkit-appearance: textfield;
+  color: var(--text-color);
+  background: var(--bg-color);
 }
 
 .login-button {
