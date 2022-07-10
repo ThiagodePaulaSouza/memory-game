@@ -9,7 +9,7 @@ const characters = [
   "flameQueen",
   "gunter",
   "iceKing",
-  "jake",
+  "Jake",
   "lich",
   "marceline",
   "princessBubblegum",
