@@ -1,4 +1,6 @@
 const grid = document.querySelector(".grid");
+const spanPlayer = document.querySelector(".player");
+const timer = document.querySelector(".timer");
 
 const characters = [
   "bmo",
@@ -23,19 +25,21 @@ let firstCard = "";
 let secondCard = "";
 
 const checkEndGame = () => {
-  const disabledCards = document.querySelectorAll('.disabled-card');
-  
+  const disabledCards = document.querySelectorAll(".disabled-card");
 
+  /**
+   * Modal endGame escurece fundo, com botões
+   * Inicio (casinha) , Restart (seta voltando), Créditos (git)
+   * */
   if (disabledCards.length === 20) {
-    /**
-     * Modal endGame escurece fundo, com botões
-     * Inicio (casinha) , Restart (seta voltando), Créditos (git)
-     * */ 
+    clearInterval(this.loop);
     setTimeout(() => {
-      alert("Congratulations, You WIN!!!", location.reload())
+      alert(`Congratulations ${spanPlayer.innerHTML},\nYou WIN!!!\nClick OK to RESTART!`,
+        location.reload()
+      );
     }, 500);
   }
-}
+};
 
 const checkCards = () => {
   const firstCharacter = firstCard.getAttribute("data-character");
@@ -105,4 +109,17 @@ const loadGame = () => {
   });
 };
 
-loadGame();
+const startTimer = () => {
+  this.loop = setInterval(() => {
+    const currentTime = +timer.innerHTML;
+    timer.innerHTML = currentTime + 1;
+  }, 1000);
+};
+
+window.onload = () => {
+  const playerName = localStorage.getItem("player");
+  spanPlayer.innerHTML = playerName;
+  startTimer();
+  loadGame();
+  
+};

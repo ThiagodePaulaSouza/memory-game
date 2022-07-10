@@ -1,5 +1,24 @@
-body {
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
   background-image: url(../images/bg.jpg);
+  align-items: center;
+  justify-content: center;
+  padding: 25px 0px 50px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff50;
+  width: 100%;
+  max-width: 800px;
+  padding: 10px;
+  margin: 0 0 20px;
+  border-radius: 5px;
 }
 
 .grid {
@@ -8,7 +27,7 @@ body {
   gap: 15px;
   width: 100%;
   max-width: 800px;
-  margin: 100px auto;
+  margin: 0 auto;
 }
 
 .card {
@@ -27,7 +46,8 @@ body {
   background-size: cover;
   background-position: center;
   background-color: #d400b855;
-  border: 2px solid #c6d400;
+  border: 2px solid #cca5c7;
+  /* c6d400 */
   border-radius: 5px;
   transition: all 500ms ease;
 }
