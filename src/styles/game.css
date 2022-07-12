@@ -18,7 +18,17 @@ header {
   max-width: 800px;
   padding: 10px;
   margin: 0 0 20px;
-  border-radius: 5px;
+  border-radius: 10px;
+}
+
+header > span {
+  font-size: 1rem;
+}
+
+@media (max-width: 480px) {
+  header > span {
+    font-size: 0.7rem;
+  }
 }
 
 .grid {
@@ -38,7 +48,6 @@ header {
   transition: all 500ms ease;
   transform-style: preserve-3d;
 }
-
 
 .face {
   width: 100%;
@@ -67,7 +76,7 @@ header {
 
 .back {
   background-image: url(../images/backjpg.jpg);
-  
+
   backface-visibility: hidden;
 }
 
@@ -75,6 +84,68 @@ header {
   transform: rotateY(180deg);
 }
 
-.disabled-card { 
+.disabled-card {
   filter: saturate(0);
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  background-color: hsla(27, 100%, 26%, 0.4);
+  backdrop-filter: blur(6px) saturate(120%) contrast(100%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%) contrast(100%);
+}
+
+.modal-title {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 55em;
+  height: 10%;
+  display: flex;
+  font-size: 14px;
+  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f4f3f1;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 50px;
+}
+
+@media (max-width: 900px) {
+  .modal-title {
+    gap: 20%;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 40em;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f4f3f1;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 50px;
+}
+
+a:hover {
+  color: rgb(0, 160, 224);
 }
