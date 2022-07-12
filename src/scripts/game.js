@@ -1,6 +1,8 @@
 const grid = document.querySelector(".grid");
 const spanPlayer = document.querySelector(".player");
 const timer = document.querySelector(".timer");
+const body = document.querySelector("body");
+const main = document.querySelector("main");
 
 const characters = [
   "bmo",
@@ -26,15 +28,29 @@ let secondCard = "";
 
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll(".disabled-card");
+  const modalEndGame = createElement("div", "modal");
+  const modalEndGameContent = createElement("div", "modal-content");
+  const spanMenu = createElement("i", "fa-solid fa-house fa-2xl");
+  const spanRestart = createElement("i", "fa-solid fa-arrow-rotate-right fa-2xl");
+  const spanCredits = createElement("i", "fa-brands fa-github fa-2xl");
+  const menu = document.createElement("a");
+  const restart = document.createElement("a");
+  const credits = document.createElement("a",);
+  menu.setAttribute("href", "../../index.html")
+  menu.appendChild(spanMenu)
+  restart.appendChild(spanRestart)
+  credits.setAttribute("href", "https://github.com/thiagodepaulasouza")
+  credits.appendChild(spanCredits)
 
-  if (disabledCards.length === 20) {
+  if (disabledCards.length === 2) {
     clearInterval(this.loop);
     setTimeout(() => {
-      alert(
-        `Congratulations ${spanPlayer.innerHTML},\nYou WIN!!!\nClick OK to RESTART!`,
-        location.reload()
-      );
-    }, 500);
+      body.insertBefore(modalEndGame, main);
+      modalEndGame.appendChild(modalEndGameContent);
+      modalEndGameContent.appendChild(menu);
+      modalEndGameContent.appendChild(restart).addEventListener("click", () => location.reload());
+      modalEndGameContent.appendChild(credits);
+    }, 400);
   }
 };
 

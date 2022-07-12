@@ -6,3 +6,9 @@
     border: none;
     font-family: 'Press Start 2P', cursive;
 }
+
+a {
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+}
