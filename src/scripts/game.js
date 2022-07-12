@@ -29,26 +29,38 @@ let secondCard = "";
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll(".disabled-card");
   const modalEndGame = createElement("div", "modal");
+  const modalEndGameTitle = createElement("div", "modal-title");
   const modalEndGameContent = createElement("div", "modal-content");
   const spanMenu = createElement("i", "fa-solid fa-house fa-2xl");
-  const spanRestart = createElement("i", "fa-solid fa-arrow-rotate-right fa-2xl");
+  const spanRestart = createElement(
+    "i",
+    "fa-solid fa-arrow-rotate-right fa-2xl"
+  );
   const spanCredits = createElement("i", "fa-brands fa-github fa-2xl");
   const menu = document.createElement("a");
   const restart = document.createElement("a");
-  const credits = document.createElement("a",);
-  menu.setAttribute("href", "../../index.html")
-  menu.appendChild(spanMenu)
-  restart.appendChild(spanRestart)
-  credits.setAttribute("href", "https://github.com/thiagodepaulasouza")
-  credits.appendChild(spanCredits)
+  const credits = document.createElement("a");
+  menu.setAttribute("href", "../../index.html");
+  menu.appendChild(spanMenu);
+  restart.appendChild(spanRestart);
+  credits.setAttribute("href", "https://github.com/thiagodepaulasouza");
+  credits.setAttribute("target", "_blank");
+  credits.appendChild(spanCredits);
 
-  if (disabledCards.length === 2) {
+  if (disabledCards.length === 20) {
     clearInterval(this.loop);
+    const FinishTime = timer.innerHTML;
     setTimeout(() => {
       body.insertBefore(modalEndGame, main);
+      modalEndGame.appendChild(modalEndGameTitle);
       modalEndGame.appendChild(modalEndGameContent);
+      modalEndGameTitle.innerHTML = `<span>Congratulations </span><span>${localStorage.getItem(
+        "player"
+      )} </span><span>You win in ${FinishTime}s</span>`;
       modalEndGameContent.appendChild(menu);
-      modalEndGameContent.appendChild(restart).addEventListener("click", () => location.reload());
+      modalEndGameContent
+        .appendChild(restart)
+        .addEventListener("click", () => location.reload());
       modalEndGameContent.appendChild(credits);
     }, 400);
   }

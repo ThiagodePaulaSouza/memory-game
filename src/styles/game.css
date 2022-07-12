@@ -18,7 +18,17 @@ header {
   max-width: 800px;
   padding: 10px;
   margin: 0 0 20px;
-  border-radius: 5px;
+  border-radius: 10px;
+}
+
+header > span {
+  font-size: 1rem;
+}
+
+@media (max-width: 480px) {
+  header > span {
+    font-size: 0.7rem;
+  }
 }
 
 .grid {
@@ -91,6 +101,34 @@ header {
   -webkit-backdrop-filter: blur(6px) saturate(120%) contrast(100%);
 }
 
+.modal-title {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 55em;
+  height: 10%;
+  display: flex;
+  font-size: 14px;
+  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f4f3f1;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 50px;
+}
+
+@media (max-width: 900px) {
+  .modal-title {
+    gap: 20%;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 .modal-content {
   position: absolute;
   top: 50%;
@@ -106,4 +144,8 @@ header {
   padding: 20px;
   border: 1px solid #888;
   border-radius: 50px;
+}
+
+a:hover {
+  color: rgb(0, 160, 224);
 }
