@@ -43,7 +43,7 @@ const checkEndGame = () => {
   menu.setAttribute("href", "../../index.html");
   menu.appendChild(spanMenu);
   restart.appendChild(spanRestart);
-  credits.setAttribute("href", "https://github.com/thiagodepaulasouza");
+  credits.setAttribute("href", "https://github.com/thiagodepaulasouza/memory-game");
   credits.setAttribute("target", "_blank");
   credits.appendChild(spanCredits);
 
