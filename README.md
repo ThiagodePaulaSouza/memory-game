@@ -49,8 +49,8 @@ git push -u origin (YourBranch)
 - Write about your changes
 - Click on **Create pull request**
 
-## :memo: Licença
+## :memo: License
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](.github/LICENSE.md) para mais detalhes.
+This project is under the MIT license. See the [LICENSE](https://github.com/ThiagodePaulaSouza/memory-game/blob/main/LICENSE) file for more details.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
