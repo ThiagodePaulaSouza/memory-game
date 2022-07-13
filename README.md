@@ -1,3 +1,5 @@
+<div id="top"></div>
+
 # Memory Game: Adventure Time
 click on the image to be redirected to the video (no audio)
 [![Watch the video](./assets-readme/logo-img.PNG)](https://youtu.be/nVqKD17iHEM)
@@ -46,3 +48,9 @@ git push -u origin (YourBranch)
 - Click on **Compare & pull request**
 - Write about your changes
 - Click on **Create pull request**
+
+## :memo: Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](.github/LICENSE.md) para mais detalhes.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
